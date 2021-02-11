@@ -6,6 +6,6 @@ namespace backend_labo01_auto.Models
     {
         public int CarModelId { get; set; }
         public string Name { get; set; }
-        public Brand Brand { get; set; }
+        public string Brand { get; set; }
     }
 }
