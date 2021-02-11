@@ -19,13 +19,13 @@ namespace backend_labo01_auto.Controllers
             {
                 _brands = new List<Brand>();
                 _brands.Add(new Brand(){
-                    BrandId = 1, Name = "Volvo", Country = "Zweden"
+                    BrandId = 1, Name = "Volvo", Country = "Zweden", LogoUrl = "https://www.media.volvocars.com/image/low/74503/1_52/5"
                 });
                 _brands.Add(new Brand(){
-                    BrandId = 2, Name = "Opel", Country = "Duitsland"
+                    BrandId = 2, Name = "Opel", Country = "Duitsland", LogoUrl = "https://nl.wikipedia.org/wiki/Opel#/media/Bestand:Opel-Logo_2017.svg"
                 });
                 _brands.Add(new Brand(){
-                    BrandId = 3, Name = "Citroën", Country = "Frankrijk"
+                    BrandId = 3, Name = "Citroën", Country = "Frankrijk", LogoUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Citroen-logo-2009.png/600px-Citroen-logo-2009.png"
                 });
             }
 
@@ -64,7 +64,11 @@ namespace backend_labo01_auto.Controllers
         }
 
         //API-Routes
-        
+        [HttpGet]
+        [Route("brands")]
+        public ActionResult<List<Brand>> getBrands(){
+            return new OkObjectResult(_brands);
+        }
 
         
     }
